@@ -1,0 +1,170 @@
+.container {
+    .window {
+        position: absolute;
+        overflow: auto;
+        top: 0%;
+        left: 0;
+        height: 90%;
+        width: 100%;
+        background-color: oldlace;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid rgba(34, 38, 41, 0.6);
+
+        &-hide {
+            display: none;
+        }
+
+        &__navigation {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            padding: .3rem 1rem;
+            border-bottom: 2px solid rgba(34, 38, 41, 0.6);
+
+            &:hover {
+                cursor: grab;
+            }
+            
+            h1 {
+                align-self: center;
+                color: black;
+            }
+
+            button {
+                background-color: transparent;
+                border: none;
+                color: black;
+
+                &:focus {
+                    outline: none;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &__content {
+            padding: 0 0.5rem;
+
+            .loader {
+                display: block;
+                height: 50px;
+                width: 50px;
+                margin: 1rem auto;
+                border: 4px rgba(0, 0, 0, 0.25) solid;
+                border-top: 4px black solid;
+                border-bottom: 4px black solid;
+                border-radius: 50%;
+                -webkit-animation: spin 1s infinite linear;
+                        animation: spin 1s infinite linear;
+              }
+              
+              @-webkit-keyframes spin {
+                from {
+                  -webkit-transform: rotate(0deg);
+                          transform: rotate(0deg);
+                }
+                to {
+                  -webkit-transform: rotate(359deg);
+                          transform: rotate(359deg);
+                }
+              }
+              @keyframes spin {
+                from {
+                  -webkit-transform: rotate(0deg);
+                          transform: rotate(0deg);
+                  -webkit-transform: rotate(0deg);
+                          transform: rotate(0deg);
+                }
+                to {
+                  -webkit-transform: rotate(359deg);
+                          transform: rotate(359deg);
+                  -webkit-transform: rotate(359deg);
+                          transform: rotate(359deg);
+                }
+              }
+
+
+            &__description {
+                color: black;
+                font-size: 18px;
+                font-style: italic;
+                line-height: 2rem;
+            }
+
+            &__project {
+                padding: 2%;
+                margin: 2% 0;
+                background: rgba( 255, 255, 255, 0.35 );
+                box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.30 );
+                backdrop-filter: blur(10px);
+                border-radius: 10px;
+                border: 1px solid rgba(255, 255, 255, 0.6);
+
+                &__links {
+                    position: absolute;
+                    top: 0.5rem;
+                    right: 0;
+
+                    a {
+                        margin: 0.5rem;
+                        color: black;
+                    }
+                }
+
+                p {
+                    margin: 1% 0;
+                }
+
+                &__stack {
+                    display: flex;
+                    flex-direction: row;
+                    
+                    p {
+                        font-style: italic;
+                        margin: 1% 2%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 900px) {
+    .container {
+        .window {
+            top: 5%;
+            bottom: 5%;
+            left: 20%;
+            height: fit-content;
+            width: 35rem;
+            background: oldlace;
+            border-radius: 10px;
+            border: 2px solid rgba(34, 38, 41, 0.6);
+
+            &__navigation {
+                border-bottom: 2px solid rgba(34, 38, 41, 0.6);
+            }
+
+            &__content {
+                padding: 0 1rem;
+            }
+            
+
+            &::-webkit-scrollbar-track {
+                background-color: transparent;
+            }
+              
+            &::-webkit-scrollbar {
+                background-color: transparent;
+            }
+              
+            &::-webkit-scrollbar-thumb {
+                background-color: transparent;
+                border-radius: 10px;
+            }
+        }  
+    }
+}
